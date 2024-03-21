@@ -1,6 +1,6 @@
 /**
  * genpac 2.1.0 https://github.com/JinnLynn/genpac
- * Generated: 2024-03-21 16:31:54
+ * Generated: 2024-03-21 16:45:03
  * GFWList Last-Modified: 2024-02-19 15:27:32
  * GFWList From: online[https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt]
  */
@@ -8,7 +8,11 @@
 var proxy = '__PROXY__';
 var rules = [
     [
-        [],
+        [
+            "163.com",
+            "sina.com",
+            "zhihu.com"
+        ],
         [
             "bing.com",
             "flutter.dev",
@@ -16,13 +20,16 @@ var rules = [
             "github.io",
             "githubassets.com",
             "githubusercontent.com",
+            "google.com",
             "jetbrains.com",
             "npmjs.com",
             "openai.com",
             "pub.dev",
             "reactjs.org",
             "singlelogin.re",
-            "vuejs.org"
+            "twitter.com",
+            "vuejs.org",
+            "youtube.com"
         ]
     ],
     [
