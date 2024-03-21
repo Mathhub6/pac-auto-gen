@@ -26,7 +26,7 @@ jobs:
 
       - run: python -m pip install --upgrade pip
       - run: pip install genpac
-      - run: genpac --format pac --user-rule-from ./rules.txt --pac-proxy "SOCKS5 127.0.0.1:9573" > ./pac.txt
+      - run: genpac --format pac --user-rule-from ./rules.txt --pac-proxy "__PROXY__" > ./pac.txt
 
       - uses: josStorer/get-current-time@v2
         id: time
