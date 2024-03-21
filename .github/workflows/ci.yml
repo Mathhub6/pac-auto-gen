@@ -49,4 +49,4 @@ jobs:
           release_name: v2rayn pac.txt
           tag: pac
           file_glob: true
-          file: ./master/pac/*
+          file: ./pac/*
