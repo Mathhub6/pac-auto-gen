@@ -46,7 +46,6 @@ jobs:
         uses: svenstaro/upload-release-action@v2
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
-          release_name: ${{ env.RELEASE_NAME }}
-          tag: ${{ env.TAG_NAME }}
+          release_name: v2rayn pac.txt
+          tag: pac
           file_glob: true
-          file: ./pac/*
