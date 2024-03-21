@@ -2,7 +2,7 @@
 
 使用 GitHub Actions 每周生成 PAC
 
-![CI](https://img.shields.io/github/actions/workflow/status/suiyun39/pac-auto-gen/ci.yml?label=CI&logo=github-actions&logoColor=white&style=for-the-badge)
+![CI](https://img.shields.io/github/actions/workflow/status/mathhub6/pac-auto-gen/ci.yml?label=CI&logo=github-actions&logoColor=white&style=for-the-badge)
 
 ## 说明
 
@@ -14,7 +14,7 @@
 
 ## 下载
 
-<a href="https://raw.githubusercontent.com/suiyun39/pac-auto-gen/master/pac.txt" download>pac.txt</a>
+<a href="https://github.com/Mathhub6/pac-auto-gen/blob/master/pac.txt" download>pac.txt</a>
 
 ## 感谢
 
