@@ -40,15 +40,7 @@ jobs:
           add: pac.txt
           author_name: "github-actions[bot]"
           author_email: "github-actions[bot]@users.noreply.github.com"
-        
-        name: Release and upload assets
-        uses: svenstaro/upload-release-action@v2
-        with:
-          repo_token: ${{ secrets.GITHUB_TOKEN }}
-          release_name: ${{ env.RELEASE_NAME }}
-          tag: ${{ env.TAG_NAME }}
-          file_glob: true
-          file: ./pac/*
+
 
       - name: Git push assets to "release" branch
         run: |
