@@ -4,7 +4,7 @@
     "config:base",
     "schedule:weekends",
     ":dependencyDashboardApproval",
-    ":assignee(suiyun39)",
+    ":assignee(mathhub)",
     ":labels(dependencies)"
   ],
   "rebaseWhen": "never",
