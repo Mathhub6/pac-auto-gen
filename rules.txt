@@ -35,7 +35,15 @@
 *.pub.dev
 *.flutter.dev
 
+twitter.com
+.youtube.com
+.openai.com
+.bing.com
+.google.com
+.singlelogin.re
 
-*.openai.com
-*.bing.com
-*.singlelogin.re
+
+@@sina.com
+@@163.com
+@@zhihu.com
+
