@@ -45,5 +45,5 @@ twitter.com
 
 @@sina.com
 @@163.com
-@@zhihu.com
-
+@@*.zhihu.com
+@@*.chaoxing.com
