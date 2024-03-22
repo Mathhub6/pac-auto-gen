@@ -21,7 +21,7 @@ jobs:
       - name: Set variables
         run: |
           echo "RELEASE_NAME=pac.txt update on $(date +%Y%m%d%H%M)" >> $GITHUB_ENV
-          echo "TAG_NAME=$(pac date +%Y%m%d%H%M)" >> $GITHUB_ENV
+          echo "TAG_NAME=pac $(date +%Y%m%d%H%M)" >> $GITHUB_ENV
         shell: bash
 
       - uses: actions/checkout@v4
