@@ -14,7 +14,7 @@
 
 ## 下载
 
-<a href="https://github.com/Mathhub6/pac-auto-gen/blob/master/pac.txt" download>pac.txt</a>
+<a href="./pac/pac.txt" download>pac.txt</a>
 
 ## 感谢
 
