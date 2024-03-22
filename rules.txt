@@ -41,6 +41,7 @@ twitter.com
 .bing.com
 .google.com
 .singlelogin.re
+dlz1.fcdn.sk
 
 
 @@sina.com
