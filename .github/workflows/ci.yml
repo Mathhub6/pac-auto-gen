@@ -2,7 +2,7 @@ name: CI
 
 on:
   schedule:
-    - cron: "0 22 * * *"
+    - cron: "50 10 * * *"
   push:
     branches:
       - master
@@ -19,24 +19,6 @@ jobs:
   build:
     runs-on: ubuntu-20.04
     steps:
-      - name: Check the current timezone database
-        run: |
-          ls /usr/share/zoneinfo
-          echo "---"
-          date
-          echo "---"
-
-      - name: Add the custom timezone database file
-        run: |
-          sudo mkdir -p /usr/share/zoneinfo/Asia
-          sudo cp /tmp/Asia/Shanghai /usr/share/zoneinfo/Asia/
-          sudo ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
-  
-      - name: Show the timezone
-        run: |
-          echo "The timezone is $TZ"
-          date
-
       - name: Set variables
         run: |
           echo "RELEASE_NAME=pac.txt update on $(date +%Y%m%d%H%M)" >> $GITHUB_ENV
