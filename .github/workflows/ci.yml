@@ -2,12 +2,12 @@ name: CI
 
 on:
   schedule:
-    - cron: "0 22 * * *"
+    - cron: "20 10 * * *"
   push:
     branches:
       - master
     paths:
-      - '.github/workflows/*.yml'
+      - '.github/*.yml'
       - 'rules.txt'
   pull_request:
     branches:
