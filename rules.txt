@@ -42,7 +42,7 @@ twitter.com
 .google.com
 .singlelogin.re
 dlz1.fcdn.sk
-
+copilot.microsoft.com
 
 @@sina.com
 @@163.com
