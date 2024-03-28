@@ -1,6 +1,6 @@
 /**
  * genpac 2.1.0 https://github.com/JinnLynn/genpac
- * Generated: 2024-03-27 22:15:59
+ * Generated: 2024-03-28 15:38:17
  * GFWList Last-Modified: 2024-02-19 15:27:32
  * GFWList From: online[https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt]
  */
@@ -10,7 +10,11 @@ var rules = [
     [
         [
             "163.com",
+            "bilibili.com",
             "chaoxing.com",
+            "csdn.net",
+            "educoder.net",
+            "qq.com",
             "sina.com",
             "zhihu.com"
         ],
@@ -19,6 +23,7 @@ var rules = [
             "fcdn.sk",
             "flutter.dev",
             "github.com",
+            "github.dev",
             "github.io",
             "githubassets.com",
             "githubusercontent.com",
