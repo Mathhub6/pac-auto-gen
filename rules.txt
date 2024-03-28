@@ -24,14 +24,11 @@
 *.githubusercontent.com
 *.githubassets.com
 *.github.io
-
 *.reactjs.org
 *.vuejs.org
 *.unpkg.com,
 *.npmjs.com
-
 *.jetbrains.com
-
 *.pub.dev
 *.flutter.dev
 
@@ -42,9 +39,14 @@ twitter.com
 .google.com
 .singlelogin.re
 dlz1.fcdn.sk
+github.dev
 copilot.microsoft.com
 
+@@www.educoder.net
 @@sina.com
 @@163.com
 @@*.zhihu.com
 @@*.chaoxing.com
+@@*.bilibili.com
+@@*.csdn.net
+@@*.weixin.qq.com
