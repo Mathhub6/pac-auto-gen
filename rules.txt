@@ -40,6 +40,7 @@ twitter.com
 .singlelogin.re
 dlz1.fcdn.sk
 github.dev
+1.1.1.1
 copilot.microsoft.com
 
 @@www.educoder.net
