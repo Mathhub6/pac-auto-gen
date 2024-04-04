@@ -14,7 +14,7 @@
 
 ## 下载
 
-<a href="./releases/latest/download/pac.txt" download>pac.txt</a>
+<a href="../../releases/latest/download/pac.txt" download>pac.txt</a>
 
 ## 感谢
 
