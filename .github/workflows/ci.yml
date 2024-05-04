@@ -44,10 +44,12 @@ jobs:
       - uses: EndBug/add-and-commit@v9
         if: github.event_name != 'pull_request'
         with:
-          message: "chore: ${{ steps.time.outputs.formattedTime }} update ./pac/pac.txt"
-          add: ./pac/pac.txt
+          message: "chore: ${{ steps.time.outputs.formattedTime }} update ./pac/pac.txt ./gfwlist.txt"
+          add: ./pac/pac.txt ./gfwlist.txt
           author_name: "github-actions[bot]"
           author_email: "github-actions[bot]@users.noreply.github.com"
+
+
 
 
       - name: Release and upload assets
