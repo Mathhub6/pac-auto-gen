@@ -46,12 +46,12 @@ copilot.microsoft.com
 qv2ray-net.pages.dev
 v2raya.org
 
-@@www.educoder.net
-@@sina.com
-@@163.com
-@@*.zhihu.com
-@@*.chaoxing.com
-@@*.bilibili.com
-@@*.csdn.net
-@@*.weixin.qq.com
-@@embyplus.org  
+@@*.educoder.net/*
+@@*.sina.com/*
+@@*.163.com/*
+@@*.zhihu.com/*
+@@*.chaoxing.com/*
+@@*.bilibili.com/*
+@@*.csdn.net/*
+@@*.weixin.qq.com/*
+@@*.embyplus.org/*  
