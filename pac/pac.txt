@@ -1,6 +1,6 @@
 /**
  * genpac 2.1.0 https://github.com/JinnLynn/genpac
- * Generated: 2024-05-04 13:06:44
+ * Generated: 2024-05-04 13:11:55
  * GFWList Last-Modified: 2024-04-18 15:17:15
  * GFWList From: online[https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt]
  */
@@ -14,6 +14,7 @@ var rules = [
             "chaoxing.com",
             "csdn.net",
             "educoder.net",
+            "embyplus.org",
             "qq.com",
             "sina.com",
             "zhihu.com"
