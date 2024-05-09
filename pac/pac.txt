@@ -1,6 +1,6 @@
 /**
  * genpac 2.1.0 https://github.com/JinnLynn/genpac
- * Generated: 2024-05-09 22:14:41
+ * Generated: 2024-05-09 23:38:32
  * GFWList Last-Modified: 2024-04-18 15:17:15
  * GFWList From: online[https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt]
  */
@@ -30,6 +30,7 @@ var rules = [
             "githubassets.com",
             "githubusercontent.com",
             "google.com",
+            "happymh.com",
             "jetbrains.com",
             "microsoft.com",
             "npmjs.com",
