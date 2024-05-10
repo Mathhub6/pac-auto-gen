@@ -46,7 +46,7 @@ copilot.microsoft.com
 qv2ray-net.pages.dev
 v2raya.org
 m.happymh.com
-89.58.18.111:8096
+
 
 @@*.educoder.net/*
 @@*.sina.com/*
