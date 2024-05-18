@@ -46,7 +46,7 @@ copilot.microsoft.com
 qv2ray-net.pages.dev
 v2raya.org
 m.happymh.com
-
+www.kaggle.com
 
 @@*.educoder.net/*
 @@*.sina.com/*
