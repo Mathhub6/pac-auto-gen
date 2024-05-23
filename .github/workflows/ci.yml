@@ -9,6 +9,7 @@ on:
     paths:
       - '.github/*.yml'
       - 'rules.txt'
+      - 'gfwlist.txt'
   pull_request:
     branches:
       - master
