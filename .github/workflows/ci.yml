@@ -37,7 +37,7 @@ jobs:
 
       - name: Generate PAC file
         run: |
-          genpac --format=pac --pac-proxy "__PROXY__" --gfwlist-local=./gfwlist.txt --gfwlist-update-local
+          genpac --format=pac --pac-proxy "__PROXY__" --gfwlist-local=./gfwlist.txt --gfwlist-update-local > ./gfwlist.txt
           genpac --format pac --user-rule-from ./rules.txt --pac-proxy "__PROXY__" > ./pac/pac.txt
 
       - name: Get current time
