@@ -1,15 +1,14 @@
-# To get started with Dependabot version updates, you'll need to specify which
-# package ecosystems to update and where the package manifests are located.
-# Please see the documentation for all configuration options:
+# Dependabot configuration file for GitHub Actions updates
+# For full configuration options, refer to the documentation:
 # https://help.github.com/github/administering-a-repository/configuration-options-for-dependency-updates
 
 version: 2
 updates:
   - package-ecosystem: "github-actions"
-    directory: "/"
+    directory: "/"  # The root directory of the repository
     schedule:
-      interval: "daily"
-      timezone: "Asia/Shanghai"
-      time: "07:00"
+      interval: "daily"  # Check for updates daily
+      timezone: "Asia/Shanghai"  # Use Shanghai timezone
+      time: "07:00"  # At 07:00 AM Shanghai time
     pull-request-branch-name:
-      separator: "-"
+      separator: "-"  # Use dash as separator in branch names
