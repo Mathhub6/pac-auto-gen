@@ -37,7 +37,16 @@ jobs:
 
       - name: Download gfwlist.txt
         run: curl -o gfwlist.txt https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt
-
+        
+      - name: Commit changes1
+        uses: EndBug/add-and-commit@v9
+        if: github.event_name != 'pull_request'
+        with:
+          message: "chore: ${{ steps.time.outputs.formattedTime }} update ./gfwlist.txt"
+          add: ./gfwlist.txt
+          author_name: "github-actions[bot]"
+          author_email: "github-actions[bot]@users.noreply.github.com"
+          
       - name: Generate PAC file
         run: |
           genpac --format=pac --pac-proxy "__PROXY__" --gfwlist-local=./gfwlist.txt --gfwlist-update-local
@@ -60,12 +69,13 @@ jobs:
       #       gh release delete $previous_tag --repo $GITHUB_REPOSITORY --yes
       #     fi
 
-      - name: Commit changes
+
+      - name: Commit changes2
         uses: EndBug/add-and-commit@v9
         if: github.event_name != 'pull_request'
         with:
-          message: "chore: ${{ steps.time.outputs.formattedTime }} update ./pac/pac.txt ./gfwlist.txt"
-          add: ./pac/pac.txt ./gfwlist.txt
+          message: "chore: ${{ steps.time.outputs.formattedTime }} update ./pac/pac.txt"
+          add: ./pac/pac.txt
           author_name: "github-actions[bot]"
           author_email: "github-actions[bot]@users.noreply.github.com"
 
