@@ -49,6 +49,17 @@ jobs:
         with:
           format: yyyy-MM-DD
 
+      - name: Delete previous release and tag
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          previous_tag=$(git describe --tags `git rev-list --tags --max-count=1`)
+          if [ -n "$previous_tag" ]; then
+            echo "Deleting previous tag: $previous_tag"
+            git push --delete origin $previous_tag
+            gh release delete $previous_tag --repo $GITHUB_REPOSITORY --yes
+          fi
+
       - name: Commit changes
         uses: EndBug/add-and-commit@v9
         if: github.event_name != 'pull_request'
