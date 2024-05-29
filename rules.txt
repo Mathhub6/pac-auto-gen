@@ -34,16 +34,16 @@
 *.chatgpt.com
 *.embyplus.org
 *.9521732.xyz
+*.openai.com
 
 twitter.com
 .youtube.com
-.openai.com
+
 .bing.com
 .google.com
 .singlelogin.re
 dlz1.fcdn.sk
 github.dev
-1.1.1.1
 archive.ics.uci.edu
 copilot.microsoft.com
 qv2ray-net.pages.dev
