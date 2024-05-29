@@ -32,6 +32,8 @@
 *.pub.dev
 *.flutter.dev
 *.chatgpt.com
+*.embyplus.org
+*.9521732.xyz
 
 twitter.com
 .youtube.com
