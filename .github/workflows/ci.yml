@@ -35,11 +35,13 @@ jobs:
           python -m pip install --upgrade pip
           pip install genpac
 
+      - name : Download GFWLIST file
+        run: curl -O  https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt
+
       - name: Generate PAC file
         run: |
-          genpac --format=pac --pac-proxy "__PROXY__" --gfwlist-local=./gfwlist.txt --gfwlist-update-local > ./gfwlist.txt
-          genpac --format pac --user-rule-from ./rules.txt --pac-proxy "__PROXY__" > ./pac/pac.txt
-
+         genpac --format=pac --pac-proxy "__PROXY__" --gfwlist-local='./gfwlist.txt' --user-rule-from './rules.txt' > ./pac/pac.txt
+         
       - name: Get current time
         uses: josStorer/get-current-time@v2
         id: time
