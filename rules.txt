@@ -42,6 +42,7 @@ twitter.com
 .bing.com
 .google.com
 .singlelogin.re
+.singlelogin.rs
 dlz1.fcdn.sk
 github.dev
 archive.ics.uci.edu
