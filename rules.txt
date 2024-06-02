@@ -35,6 +35,7 @@
 *.embyplus.org
 *.9521732.xyz
 *.openai.com
+*.tencloud.net
 
 twitter.com
 .youtube.com
