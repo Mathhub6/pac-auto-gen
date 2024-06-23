@@ -1,6 +1,6 @@
 /**
  * genpac 3.0 https://github.com/JinnLynn/genpac
- * Generated: 2024-06-22 22:13:58
+ * Generated: 2024-06-23 11:01:55
  * GFWList Last-Modified: 2024-06-07 03:48:34
  * GFWList From: online[https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt]
  */
@@ -21,8 +21,8 @@ var rules = [
         [
             "9521732.xyz",
             "archive.ics.uci.edu",
-            "bing.com",
             "chatgpt.com",
+            "claude.ai",
             "copilot.microsoft.com",
             "dlz1.fcdn.sk",
             "embyplus.org",
@@ -32,7 +32,6 @@ var rules = [
             "github.io",
             "githubassets.com",
             "githubusercontent.com",
-            "google.com",
             "jetbrains.com",
             "m.happymh.com",
             "npmjs.com",
@@ -46,8 +45,11 @@ var rules = [
             "twitter.com",
             "v2raya.org",
             "vuejs.org",
+            "www.anthropic.com",
+            "www.bing.com",
+            "www.google.com",
             "www.kaggle.com",
-            "youtube.com"
+            "www.youtube.com"
         ]
     ],
     [
