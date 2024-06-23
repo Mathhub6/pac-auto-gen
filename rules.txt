@@ -38,10 +38,12 @@
 *.tencloud.net
 
 twitter.com
-.youtube.com
+www.youtube.com
 
-.bing.com
-.google.com
+claude.ai
+www.anthropic.com
+www.bing.com
+www.google.com
 .singlelogin.re
 .singlelogin.rs
 dlz1.fcdn.sk
