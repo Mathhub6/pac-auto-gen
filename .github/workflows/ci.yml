@@ -64,25 +64,18 @@ jobs:
       - name: Generate configuration files
         run: |
           mkdir -p output
-          genpac --format=pac --pac-proxy "__PROXY__" --gfwlist-local='./gfwlist.txt' --user-rule-from './rules.txt,./AWAvenue-Ads-Rule.txt' -o ./output/pac.txt
-          genpac --format=dnsmasq --gfwlist-local='./gfwlist.txt' --user-rule-from './rules.txt,./AWAvenue-Ads-Rule.txt' -o ./output/dnsmasq.conf
-          genpac --format=v2ray --gfwlist-local='./gfwlist.txt' --user-rule-from './rules.txt,./AWAvenue-Ads-Rule.txt' -o ./output/v2ray.json
-          genpac --format=shadowsocks --gfwlist-local='./gfwlist.txt' --user-rule-from './rules.txt,./AWAvenue-Ads-Rule.txt' -o ./output/shadowsocks.json
-          genpac --format=quantumultx --gfwlist-local='./gfwlist.txt' --user-rule-from './rules.txt,./AWAvenue-Ads-Rule.txt' -o ./output/quantumultx.conf
-          genpac --format=shadowrocket --gfwlist-local='./gfwlist.txt' --user-rule-from './rules.txt,./AWAvenue-Ads-Rule.txt' -o ./output/shadowrocket.conf
-          genpac --format=surge --gfwlist-local='./gfwlist.txt' --user-rule-from './rules.txt,./AWAvenue-Ads-Rule.txt' -o ./output/surge.conf
-          genpac --format=wingy --gfwlist-local='./gfwlist.txt' --user-rule-from './rules.txt,./AWAvenue-Ads-Rule.txt' -o ./output/wingy.conf
-          genpac --format=potatso --gfwlist-local='./gfwlist.txt' --user-rule-from './rules.txt,./AWAvenue-Ads-Rule.txt' -o ./output/potatso.conf
-          genpac --format=ip --gfwlist-local='./gfwlist.txt' --user-rule-from './rules.txt,./AWAvenue-Ads-Rule.txt' -o ./output/ip.txt
-          genpac --format=list --gfwlist-local='./gfwlist.txt' --user-rule-from './rules.txt,./AWAvenue-Ads-Rule.txt' -o ./output/list.txt
-          genpac --format=copy --gfwlist-local='./gfwlist.txt' --user-rule-from './rules.txt,./AWAvenue-Ads-Rule.txt' -o ./output/copy.txt
+          genpac --format=pac --pac-proxy "__PROXY__" --gfwlist-local='./gfwlist.txt' --user-rule-from './rules.txt,./AWAvenue-Ads-Rule.txt' -o ./pac/pac.txt
 
-      - name: Commit changes to output files
+
+
+
+          
+      - name: Commit changes to pac.txt
         uses: EndBug/add-and-commit@v9
         if: github.event_name != 'pull_request'
         with:
-          message: "chore: ${{ steps.time.outputs.formattedTime }} update output files"
-          add: output/*
+          message: "chore: ${{ steps.time.outputs.formattedTime }} update ./pac/pac.txt"
+          add: ./pac/pac.txt
           author_name: "github-actions[bot]"
           author_email: "github-actions[bot]@users.noreply.github.com"
 
@@ -104,4 +97,4 @@ jobs:
           release_name: ${{ env.RELEASE_NAME }}
           tag: ${{ env.TAG_NAME }}
           file_glob: true
-          file: ./output/*
+          file: ./pac/*
