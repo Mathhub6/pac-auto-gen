@@ -34,24 +34,16 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install genpac
-
-      - name: Download GFWLIST file
-        run: curl -O https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt
-
-      - name: Download AWAvenue-Ads-Rule file
-        run: curl -O https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/AWAvenue-Ads-Rule.txt
-        
-      - name: Generate PAC file
-        run: |
-          mkdir -p pac
-          genpac --format=pac --pac-proxy "__PROXY__" --gfwlist-local='./gfwlist.txt' --user-rule-from './rules.txt,./AWAvenue-Ads-Rule.txt' -o ./pac/pac.txt
-
+           
       - name: Get current time
         uses: josStorer/get-current-time@v2
         id: time
         with:
           format: yyyy-MM-DD
-
+          
+      - name: Download GFWLIST file
+        run: curl -O https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt
+        
       - name: Commit changes to gfwlist.txt
         uses: EndBug/add-and-commit@v9
         if: github.event_name != 'pull_request'
@@ -61,6 +53,10 @@ jobs:
           author_name: "github-actions[bot]"
           author_email: "github-actions[bot]@users.noreply.github.com"
 
+
+      - name: Download AWAvenue-Ads-Rule file
+        run: curl -O https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/AWAvenue-Ads-Rule.txt
+
       - name: Commit changes to AWAvenue-Ads-Rule.txt
         uses: EndBug/add-and-commit@v9
         if: github.event_name != 'pull_request'
@@ -69,6 +65,13 @@ jobs:
           add: AWAvenue-Ads-Rule.txt
           author_name: "github-actions[bot]"
           author_email: "github-actions[bot]@users.noreply.github.com"
+        
+        
+      - name: Generate PAC file
+        run: |
+          mkdir -p pac
+          genpac --format=pac --pac-proxy "__PROXY__" --gfwlist-local='./gfwlist.txt' --user-rule-from './rules.txt,./AWAvenue-Ads-Rule.txt' -o ./pac/pac.txt
+
 
       - name: Commit changes to pac.txt
         uses: EndBug/add-and-commit@v9
