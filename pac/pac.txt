@@ -1,6 +1,6 @@
 /**
  * genpac 3.0.1 https://github.com/JinnLynn/genpac
- * Generated: 2024-06-29 22:15:22
+ * Generated: 2024-06-30 02:29:46
  * GFWList Last-Modified: 2024-06-07 03:48:34
  * GFWList From: online[https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt]
  */
@@ -20,10 +20,17 @@ var rules = [
         ],
         [
             "9521732.xyz",
+            "a.market.xiaomi.com",
+            "ad.sm.cn",
+            "ad.video.yximgs.com",
+            "ad.wtzw.com",
+            "amazonaws.com",
             "archive.ics.uci.edu",
+            "byteimg.com",
             "chatgpt.com",
             "claude.ai",
             "copilot.microsoft.com",
+            "data.hicloud.com",
             "dlz1.fcdn.sk",
             "embyplus.org",
             "flutter.dev",
@@ -33,15 +40,21 @@ var rules = [
             "githubassets.com",
             "githubusercontent.com",
             "jetbrains.com",
+            "lm.adkwai.com",
+            "log.aliyuncs.com",
             "m.happymh.com",
+            "normal.zijieapi.com",
             "npmjs.com",
             "openai.com",
             "pub.dev",
             "qv2ray-net.pages.dev",
             "reactjs.org",
+            "shouji.sogou.com",
             "singlelogin.re",
             "singlelogin.rs",
+            "skwai.com",
             "tencloud.net",
+            "toutiao.com",
             "twitter.com",
             "v2raya.org",
             "vuejs.org",
@@ -49,7 +62,8 @@ var rules = [
             "www.bing.com",
             "www.google.com",
             "www.kaggle.com",
-            "www.youtube.com"
+            "www.youtube.com",
+            "zijieapi.com"
         ]
     ],
     [
