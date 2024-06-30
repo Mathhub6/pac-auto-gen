@@ -38,9 +38,12 @@ jobs:
       - name : Download GFWLIST file
         run: curl -O  https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt
 
+      - name : Download AWAvenue-Ads-Rule file
+        run: curl -O  https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/AWAvenue-Ads-Rule.txt
+        
       - name: Generate PAC file
         run: |
-         genpac --format=pac --pac-proxy "__PROXY__" --gfwlist-local='./gfwlist.txt' --user-rule-from './rules.txt' > ./pac/pac.txt
+         genpac --format=pac --pac-proxy "__PROXY__" --gfwlist-local='./gfwlist.txt' --user-rule-from './rules.txt,./AWAvenue-Ads-Rule.txt' > ./pac/pac.txt
          
       - name: Get current time
         uses: josStorer/get-current-time@v2
@@ -57,12 +60,19 @@ jobs:
           add: gfwlist.txt
           author_name: "github-actions[bot]"
           author_email: "github-actions[bot]@users.noreply.github.com"
-          
+      - name: Commit changes2
+        uses: EndBug/add-and-commit@v9
+        if: github.event_name != 'pull_request'
+        with:
+          message: "chore: ${{ steps.time.outputs.formattedTime }} update ./AWAvenue-Ads-Rule.txt"
+          add: AWAvenue-Ads-Rule.txt
+          author_name: "github-actions[bot]"
+          author_email: "github-actions[bot]@users.noreply.github.com"
 
       
 
 
-      - name: Commit changes2
+      - name: Commit changes3
         uses: EndBug/add-and-commit@v9
         if: github.event_name != 'pull_request'
         with:
