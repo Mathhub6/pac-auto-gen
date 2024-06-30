@@ -20,7 +20,7 @@ jobs:
     steps:
       - name: Set variables
         run: |
-          echo "RELEASE_NAME=pac.txt update on $(date +%Y%m%d%H%M)" >> $GITHUB_ENV
+          echo "RELEASE_NAME=update on $(date +%Y%m%d%H%M)" >> $GITHUB_ENV
           echo "TAG_NAME=$(date +%Y%m%d%H%M)" >> $GITHUB_ENV
 
       - uses: actions/checkout@v4
@@ -34,16 +34,16 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install genpac
-           
+
       - name: Get current time
         uses: josStorer/get-current-time@v2
         id: time
         with:
           format: yyyy-MM-DD
-          
+
       - name: Download GFWLIST file
         run: curl -O https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt
-        
+
       - name: Force commit changes to gfwlist.txt
         run: |
           git config --global user.name 'github-actions[bot]'
@@ -51,10 +51,9 @@ jobs:
           git add gfwlist.txt
           git commit -m "chore: ${{ steps.time.outputs.formattedTime }} force update ./gfwlist.txt" || echo "No changes to commit"
 
-
       - name: Download AWAvenue-Ads-Rule file
         run: curl -O https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/AWAvenue-Ads-Rule.txt
-      
+
       - name: Force commit changes to AWAvenue-Ads-Rule.txt
         run: |
           git config --global user.name 'github-actions[bot]'
@@ -62,20 +61,28 @@ jobs:
           git add AWAvenue-Ads-Rule.txt
           git commit -m "chore: ${{ steps.time.outputs.formattedTime }} force update ./AWAvenue-Ads-Rule.txt" || echo "No changes to commit"
 
-
-        
-      - name: Generate PAC file
+      - name: Generate configuration files
         run: |
-          mkdir -p pac
-          genpac --format=pac --pac-proxy "__PROXY__" --gfwlist-local='./gfwlist.txt' --user-rule-from './rules.txt,./AWAvenue-Ads-Rule.txt' -o ./pac/pac.txt
+          mkdir -p output
+          genpac --format=pac --pac-proxy "__PROXY__" --gfwlist-local='./gfwlist.txt' --user-rule-from './rules.txt,./AWAvenue-Ads-Rule.txt' -o ./output/pac.txt
+          genpac --format=dnsmasq --gfwlist-local='./gfwlist.txt' --user-rule-from './rules.txt,./AWAvenue-Ads-Rule.txt' -o ./output/dnsmasq.conf
+          genpac --format=v2ray --gfwlist-local='./gfwlist.txt' --user-rule-from './rules.txt,./AWAvenue-Ads-Rule.txt' -o ./output/v2ray.json
+          genpac --format=shadowsocks --gfwlist-local='./gfwlist.txt' --user-rule-from './rules.txt,./AWAvenue-Ads-Rule.txt' -o ./output/shadowsocks.json
+          genpac --format=quantumultx --gfwlist-local='./gfwlist.txt' --user-rule-from './rules.txt,./AWAvenue-Ads-Rule.txt' -o ./output/quantumultx.conf
+          genpac --format=shadowrocket --gfwlist-local='./gfwlist.txt' --user-rule-from './rules.txt,./AWAvenue-Ads-Rule.txt' -o ./output/shadowrocket.conf
+          genpac --format=surge --gfwlist-local='./gfwlist.txt' --user-rule-from './rules.txt,./AWAvenue-Ads-Rule.txt' -o ./output/surge.conf
+          genpac --format=wingy --gfwlist-local='./gfwlist.txt' --user-rule-from './rules.txt,./AWAvenue-Ads-Rule.txt' -o ./output/wingy.conf
+          genpac --format=potatso --gfwlist-local='./gfwlist.txt' --user-rule-from './rules.txt,./AWAvenue-Ads-Rule.txt' -o ./output/potatso.conf
+          genpac --format=ip --gfwlist-local='./gfwlist.txt' --user-rule-from './rules.txt,./AWAvenue-Ads-Rule.txt' -o ./output/ip.txt
+          genpac --format=list --gfwlist-local='./gfwlist.txt' --user-rule-from './rules.txt,./AWAvenue-Ads-Rule.txt' -o ./output/list.txt
+          genpac --format=copy --gfwlist-local='./gfwlist.txt' --user-rule-from './rules.txt,./AWAvenue-Ads-Rule.txt' -o ./output/copy.txt
 
-
-      - name: Commit changes to pac.txt
+      - name: Commit changes to output files
         uses: EndBug/add-and-commit@v9
         if: github.event_name != 'pull_request'
         with:
-          message: "chore: ${{ steps.time.outputs.formattedTime }} update ./pac/pac.txt"
-          add: ./pac/pac.txt
+          message: "chore: ${{ steps.time.outputs.formattedTime }} update output files"
+          add: output/*
           author_name: "github-actions[bot]"
           author_email: "github-actions[bot]@users.noreply.github.com"
 
@@ -97,4 +104,4 @@ jobs:
           release_name: ${{ env.RELEASE_NAME }}
           tag: ${{ env.TAG_NAME }}
           file_glob: true
-          file: ./pac/*
+          file: ./output/*
