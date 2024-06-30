@@ -35,24 +35,24 @@ jobs:
           python -m pip install --upgrade pip
           pip install genpac
 
-      - name : Download GFWLIST file
-        run: curl -O  https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt
+      - name: Download GFWLIST file
+        run: curl -O https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt
 
-      - name : Download AWAvenue-Ads-Rule file
-        run: curl -O  https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/AWAvenue-Ads-Rule.txt
+      - name: Download AWAvenue-Ads-Rule file
+        run: curl -O https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/AWAvenue-Ads-Rule.txt
         
       - name: Generate PAC file
         run: |
-         genpac --format=pac --pac-proxy "__PROXY__" --gfwlist-local='./gfwlist.txt' --user-rule-from './rules.txt,./AWAvenue-Ads-Rule.txt' > ./pac/pac.txt
-         
+          mkdir -p pac
+          genpac --format=pac --pac-proxy "__PROXY__" --gfwlist-local='./gfwlist.txt' --user-rule-from './rules.txt,./AWAvenue-Ads-Rule.txt' -o ./pac/pac.txt
+
       - name: Get current time
         uses: josStorer/get-current-time@v2
         id: time
         with:
           format: yyyy-MM-DD
 
-      
-      - name: Commit changes1
+      - name: Commit changes to gfwlist.txt
         uses: EndBug/add-and-commit@v9
         if: github.event_name != 'pull_request'
         with:
@@ -60,7 +60,8 @@ jobs:
           add: gfwlist.txt
           author_name: "github-actions[bot]"
           author_email: "github-actions[bot]@users.noreply.github.com"
-      - name: Commit changes2
+
+      - name: Commit changes to AWAvenue-Ads-Rule.txt
         uses: EndBug/add-and-commit@v9
         if: github.event_name != 'pull_request'
         with:
@@ -69,10 +70,7 @@ jobs:
           author_name: "github-actions[bot]"
           author_email: "github-actions[bot]@users.noreply.github.com"
 
-      
-
-
-      - name: Commit changes3
+      - name: Commit changes to pac.txt
         uses: EndBug/add-and-commit@v9
         if: github.event_name != 'pull_request'
         with:
@@ -80,7 +78,7 @@ jobs:
           add: ./pac/pac.txt
           author_name: "github-actions[bot]"
           author_email: "github-actions[bot]@users.noreply.github.com"
-          
+
       - name: Delete previous release and tag
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -91,7 +89,7 @@ jobs:
             git push --delete origin $previous_tag
             gh release delete $previous_tag --repo $GITHUB_REPOSITORY --yes
           fi
-          
+
       - name: Release and upload assets
         uses: svenstaro/upload-release-action@v2
         with:
