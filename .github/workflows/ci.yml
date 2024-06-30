@@ -44,28 +44,25 @@ jobs:
       - name: Download GFWLIST file
         run: curl -O https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt
         
-      - name: Commit changes to gfwlist.txt
-        uses: EndBug/add-and-commit@v9
-        if: github.event_name != 'pull_request'
-        with:
-          message: "chore: ${{ steps.time.outputs.formattedTime }} update ./gfwlist.txt"
-          add: gfwlist.txt
-          author_name: "github-actions[bot]"
-          author_email: "github-actions[bot]@users.noreply.github.com"
+      - name: Force commit changes to gfwlist.txt
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git add gfwlist.txt
+          git commit -m "chore: ${{ steps.time.outputs.formattedTime }} force update ./gfwlist.txt" || echo "No changes to commit"
 
 
       - name: Download AWAvenue-Ads-Rule file
         run: curl -O https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/AWAvenue-Ads-Rule.txt
+      
+      - name: Force commit changes to AWAvenue-Ads-Rule.txt
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git add AWAvenue-Ads-Rule.txt
+          git commit -m "chore: ${{ steps.time.outputs.formattedTime }} force update ./AWAvenue-Ads-Rule.txt" || echo "No changes to commit"
 
-      - name: Commit changes to AWAvenue-Ads-Rule.txt
-        uses: EndBug/add-and-commit@v9
-        if: github.event_name != 'pull_request'
-        with:
-          message: "chore: ${{ steps.time.outputs.formattedTime }} update ./AWAvenue-Ads-Rule.txt"
-          add: AWAvenue-Ads-Rule.txt
-          author_name: "github-actions[bot]"
-          author_email: "github-actions[bot]@users.noreply.github.com"
-        
+
         
       - name: Generate PAC file
         run: |
